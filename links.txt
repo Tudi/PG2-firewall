@@ -1,0 +1,10 @@
+http://www.ndis.com/papers/winpktfilter.htm
+http://www.codeproject.com/KB/IP/firewall_sniffer.aspx
+http://www.codeproject.com/KB/IP/smfirewall.aspx
+http://www.codeproject.com/KB/IP/FwHookDrv.aspx
+http://msdntracker.blogspot.com/2007/12/creating-firewall-program.html
+http://www.pcausa.com/Utilities/utilities.htm
+
+http://sourceforge.net/project/downloading.php?groupname=peerguardian&filename=pg2-050918-src.zip&use_mirror=kent
+
+http://ntdev.h1.ru/ipfilter.html

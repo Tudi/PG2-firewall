@@ -1,0 +1,61 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+You may write whatever comments in almost any format. Only rows starting with heywords are taken into count
+Watch it to not lock yourself out!
+
+! these settings are only processed if PG did not take any action agains the received packet already !
+! this PG version does not support allow lists other then the one specified in this file !
+
+Dinamically detected possible flooders are reported only once
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+DISABLEPORTSCANNERDETECTOR=0
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Add ports that are open on our server. Every other portopen attempt is considered as a portscan and we add IP to BAN list
+	some ports in standard firewall
+ADDPORT=135
+ADDPORT=161
+	no idea about this one
+ADDPORT=19778
+ADDPORT=8081
+ADDPORT=8082
+ADDPORT=8197
+ADDPORT=8198
+ADDPORT=86
+ADDPORT=53
+	mysql
+ADDPORT=3306
+	wow realm listening port
+ADDPORT=8139
+	!! RDC port watch to not remove this one !
+ADDPORT=3389
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Add always allow IP list here. Try to keep this as short as possible. Note that PG allow list from SVN does not work so you will have to use this
+To make sure that you do not create processing lag this list is limited to a top 20 IP atm
+	my DNS1
+ADDALLOWEDIP=76.13.15.36
+	my proxy
+ADDALLOWEDIP=192.168.0.1
+	local loopback adapter
+ADDALLOWEDIP=127.0.0.1
+	messenger
+# ADDALLOWEDIP=207.0.0.0
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+DISABLECONNECTIONFLOODDETECTOR=0
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+connection flood means that X number of consecutive connections will come from same IP
+if you set this value too small you an almost every connection in case of bad connection
+if you set this value too large and you have a lot of conenction then noone will be caught as flooding
+
+SET_CONNECTION_COUNT_FOR_FLOOD=3
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Log rotation is a must for programs that run for a long lime. Setting intervals it will force log files to be flushed from time to time
+We are expecting a thousend IPs in log files so theoretically you can set this to big intervals
+Value is given in seconds
+CLEARLOGFILESINTERVAL=259200
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

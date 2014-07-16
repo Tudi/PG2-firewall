@@ -1,0 +1,3 @@
+Modded version of peer guardian to autoblock any portscanner or hacker that wants to use anything else than my provided service
+This might be a bit hard to compile as it has external dependencies like WDDDK , boost ...
+Driver will not be digitaly signed so you can only use it on win2003 or below 
